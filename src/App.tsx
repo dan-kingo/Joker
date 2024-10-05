@@ -12,13 +12,17 @@ const App = () => {
           lg: `"nav nav"
                         "side main"`,
         }}
+        templateColumns={{
+          base: "1fr",
+          lg: "200px 1fr",
+        }}
         gap="2"
       >
         <GridItem area="nav">
           <NavBar />
         </GridItem>
         <Show above="lg">
-          <GridItem area="side">
+          <GridItem paddingX={4} area="side">
             <GenreList />
           </GridItem>
         </Show>
