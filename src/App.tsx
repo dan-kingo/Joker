@@ -30,16 +30,24 @@ const App = () => {
         }}
         gap={2}
       >
-        <GridItem area="nav" bg="blackAlpha.900">
+        <GridItem
+          area="nav"
+          bg="blackAlpha.900"
+          position="fixed"
+          top={0}
+          width="100%"
+          zIndex={10}
+        >
           <NavBar onOpen={onOpen} />
         </GridItem>
+
         <Show above="lg">
-          <GridItem paddingX={4} area="side">
+          <GridItem paddingX={4} area="side" paddingTop="90px">
             <GenreList />
           </GridItem>
         </Show>
 
-        <GridItem area="main">
+        <GridItem area="main" paddingTop="90px">
           <GameGrid />
         </GridItem>
       </Grid>

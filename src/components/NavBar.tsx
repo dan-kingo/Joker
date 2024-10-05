@@ -9,16 +9,17 @@ interface Props {
 const NavBar = ({ onOpen }: Props) => {
   return (
     <HStack padding={4} justifyContent="space-between">
-      <Button
-        aria-label="Open Menu"
-        onClick={onOpen}
-        display={{ base: "block", lg: "none" }}
-      >
-        {<FaBars />}
-      </Button>
       <Image src={logo} width="90px" />
-
-      <ToogleColorMode />
+      <HStack>
+        <ToogleColorMode />
+        <Button
+          aria-label="Open Menu"
+          onClick={onOpen}
+          display={{ base: "block", lg: "none" }}
+        >
+          {<FaBars />}
+        </Button>
+      </HStack>
     </HStack>
   );
 };
