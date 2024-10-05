@@ -17,11 +17,12 @@ import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 
+export interface GameQuery {
+  genre: Genre | null;
+  platform: Platform | null;
+}
 const App = () => {
-  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
-  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
-    null
-  );
+  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -51,21 +52,18 @@ const App = () => {
         <Show above="lg">
           <GridItem paddingX={4} area="side" paddingTop="90px">
             <GenreList
-              selectedGenre={selectedGenre}
-              onSelect={(genre) => setSelectedGenre(genre)}
+              selectedGenre={gameQuery.genre}
+              onSelect={(genre) => setGameQuery({ ...gameQuery, genre })}
             />
           </GridItem>
         </Show>
 
         <GridItem area="main" paddingTop="90px">
           <PlatformSelector
-            selectedPlatform={selectedPlatform}
-            onSelect={(platform) => setSelectedPlatform(platform)}
+            selectedPlatform={gameQuery.platform}
+            onSelect={(platform) => setGameQuery({ ...gameQuery, platform })}
           />
-          <GameGrid
-            selectedPlatform={selectedPlatform}
-            selectedGenre={selectedGenre}
-          />
+          <GameGrid gameQuery={gameQuery} />
         </GridItem>
       </Grid>
 
@@ -75,8 +73,8 @@ const App = () => {
           <DrawerCloseButton />
           <DrawerBody>
             <GenreList
-              selectedGenre={selectedGenre}
-              onSelect={(genre) => setSelectedGenre(genre)}
+              selectedGenre={gameQuery.genre}
+              onSelect={(genre) => setGameQuery({ ...gameQuery, genre })}
             />
           </DrawerBody>
         </DrawerContent>
