@@ -46,7 +46,10 @@ const App = () => {
 
         <Show above="lg">
           <GridItem paddingX={4} area="side" paddingTop="90px">
-            <GenreList onSelect={(genre) => setSelectedGenre(genre)} />
+            <GenreList
+              selectedGenre={selectedGenre}
+              onSelect={(genre) => setSelectedGenre(genre)}
+            />
           </GridItem>
         </Show>
 
@@ -60,7 +63,10 @@ const App = () => {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerBody>
-            <GenreList onSelect={(genre) => setSelectedGenre(genre)} />
+            <GenreList
+              selectedGenre={selectedGenre}
+              onSelect={(genre) => setSelectedGenre(genre)}
+            />
           </DrawerBody>
         </DrawerContent>
       </Drawer>
