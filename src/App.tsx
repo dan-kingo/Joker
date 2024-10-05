@@ -12,8 +12,11 @@ import {
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
+import { useState } from "react";
+import { Genre } from "./hooks/useGenres";
 
 const App = () => {
+  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -43,12 +46,12 @@ const App = () => {
 
         <Show above="lg">
           <GridItem paddingX={4} area="side" paddingTop="90px">
-            <GenreList />
+            <GenreList onSelect={(genre) => setSelectedGenre(genre)} />
           </GridItem>
         </Show>
 
         <GridItem area="main" paddingTop="90px">
-          <GameGrid />
+          <GameGrid selectedGenre={selectedGenre} />
         </GridItem>
       </Grid>
 
@@ -57,7 +60,7 @@ const App = () => {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerBody>
-            <GenreList /> {/* Genre list inside the drawer */}
+            <GenreList onSelect={(genre) => setSelectedGenre(genre)} />
           </DrawerBody>
         </DrawerContent>
       </Drawer>
