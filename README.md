@@ -1,50 +1,78 @@
-# React + TypeScript + Vite
+# Joker - Video Game Discovery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Joker** is a video game discovery app that allows users to explore a vast collection of video games using data from the RAWG API. This application is built with **React**, **TypeScript**, and **Chakra UI** to provide a modern, responsive, and interactive user experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Discover Popular Games**: Explore a vast number of games.
+- **Search for Games**: Search for any video game using genres.
+- **Responsive Design**: Optimized for all screen sizes with Chakra UI's responsive components.
+- **Dark/Light Mode**: Switch between dark and light modes for a personalized browsing experience.
+  
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A strongly typed programming language that builds on JavaScript.
+- **Chakra UI**: A simple, modular, and accessible component library for React applications.
+- **RAWG API**: A powerful API that provides detailed video game information.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Setup Instructions
 
-- Configure the top-level `parserOptions` property like this:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Ensure you have the following installed:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- [Node.js](https://nodejs.org/en/) (version 14 or later)
+- [npm](https://www.npmjs.com/) or 
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Installation
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/dan-kingo/joker.git
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd joker
+3. Install dependencies:
+
+   ```bash
+   npm install
+   
+You can obtain your API KEY at [RAWG](https://rawg.io/)
+
+### Running The App
+
+1. To start the development server using **Vite**.
+
+    ```bash
+     npm run build
+This will run the app in development mode. Open http://localhost:5173 to view it in the browser.
+
+
+### Building The App
+
+1. Build For Production.
+
+    ```bash
+     npm run build
+
+## How It Works
+
+- The app fetches data from the RAWG API to display games.
+- The app is styled using Chakra UI and is responsive to ensure it works on all devices.
+- Dark mode and light mode are implemented for a personalized browsing experience.
+
+## Future Improvements
+
+- **Search for Games**: Search for any video game using titles platforms and more.
+- **Detailed Game Information**: View detailed game descriptions, release dates, genres, ratings, and more.
+- **Infinite Scroll**: Optimize user experience by adding infinite scroll.
+
+## Acknowledgements
+
+- Data Provided by [RAWG](https://rawg.io)
+- Built With [React](https://reacrjs.org), [Chakra UI](https://v2.chakra-ui.com), [TypeScript](https://www.typescriptlang.org)
+- Powered By [Vite](https://vitejs.dev)
