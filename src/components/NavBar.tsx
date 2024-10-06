@@ -6,12 +6,13 @@ import SearchInput from "../services/SearchInput";
 
 interface Props {
   onOpen: () => void;
+  onSubmit: (searchText: string) => void;
 }
-const NavBar = ({ onOpen }: Props) => {
+const NavBar = ({ onOpen, onSubmit }: Props) => {
   return (
     <HStack padding={4} justifyContent="space-between">
       <Image src={logo} width="90px" />
-      <SearchInput />
+      <SearchInput onSubmit={onSubmit} />
       <HStack>
         <ToogleColorMode />
         <Button
