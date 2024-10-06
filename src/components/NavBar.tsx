@@ -2,6 +2,7 @@ import { HStack, Image, Button } from "@chakra-ui/react";
 import logo from "../assets/joker-high-resolution-logo-white-transparent.png";
 import ToogleColorMode from "./ToogleColorMode";
 import { FaBars } from "react-icons/fa";
+import SearchInput from "../services/SearchInput";
 
 interface Props {
   onOpen: () => void;
@@ -10,6 +11,7 @@ const NavBar = ({ onOpen }: Props) => {
   return (
     <HStack padding={4} justifyContent="space-between">
       <Image src={logo} width="90px" />
+      <SearchInput />
       <HStack>
         <ToogleColorMode />
         <Button
