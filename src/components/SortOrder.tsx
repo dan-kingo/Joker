@@ -26,7 +26,7 @@ const SortOrder = ({ onSelect, sortOrder }: Props) => {
     (order) => order.value === sortOrder
   );
   return (
-    <Box paddingX={4}>
+    <Box>
       <Menu>
         <MenuButton as={Button} rightIcon={<BsChevronDown />}>
           Order By : {currentSortOrder?.label || "Relevence"}
