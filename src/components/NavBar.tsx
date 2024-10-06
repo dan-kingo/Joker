@@ -12,8 +12,8 @@ const NavBar = ({ onOpen, onSubmit }: Props) => {
   return (
     <HStack padding={4} justifyContent="space-between">
       <Image src={logo} width="90px" />
-      <SearchInput onSubmit={onSubmit} />
       <HStack>
+        <SearchInput onSubmit={onSubmit} />
         <ToogleColorMode />
         <Button
           aria-label="Open Menu"
