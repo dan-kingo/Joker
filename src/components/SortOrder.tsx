@@ -12,8 +12,9 @@ interface Props {
   onSelect: (order: string) => void;
   sortOrder: string;
 }
-const SortSelector = ({ onSelect, sortOrder }: Props) => {
+const SortOrder = ({ onSelect, sortOrder }: Props) => {
   const sortOrders = [
+    { value: "", label: "Relevence" },
     { value: "-added", label: "Date Added" },
     { value: "name", label: "Name" },
     { value: "-released", label: "Date Released" },
@@ -46,4 +47,4 @@ const SortSelector = ({ onSelect, sortOrder }: Props) => {
   );
 };
 
-export default SortSelector;
+export default SortOrder;

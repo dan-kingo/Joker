@@ -8,7 +8,7 @@ import {
   DrawerCloseButton,
   DrawerBody,
   useDisclosure,
-  HStack,
+  Flex,
 } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
@@ -17,7 +17,7 @@ import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
-import SortSelector from "./components/SortSelector";
+import SortOrder from "./components/SortOrder";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -62,18 +62,24 @@ const App = () => {
         </Show>
 
         <GridItem area="main" paddingTop="90px">
-          <HStack paddingBottom={4} paddingTop={2}>
+          <Flex
+            width="100%"
+            wrap="wrap"
+            paddingBottom={4}
+            paddingTop={2}
+            gap={3}
+          >
             <PlatformSelector
               selectedPlatform={gameQuery.platform}
               onSelect={(platform) => setGameQuery({ ...gameQuery, platform })}
             />
-            <SortSelector
+            <SortOrder
               sortOrder={gameQuery.sortOrder}
               onSelect={(sortOrder) =>
                 setGameQuery({ ...gameQuery, sortOrder })
               }
             />
-          </HStack>
+          </Flex>
           <GameGrid gameQuery={gameQuery} />
         </GridItem>
       </Grid>
