@@ -17,7 +17,9 @@ interface Props {
 }
 
 const GameCard = ({ game }: Props) => {
-  const { alt } = emojiMap[game.rating_top];
+  if (emojiMap[game.rating_top]) {
+    var { alt } = emojiMap[game.rating_top];
+  }
   return (
     <Card>
       <Image src={getCroppedImageUrl(game.background_image)} />
