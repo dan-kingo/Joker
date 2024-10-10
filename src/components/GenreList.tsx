@@ -29,7 +29,7 @@ const GenreList = ({ selectedGenre, onSelect }: Props) => {
         Genres
       </Heading>
       <List>
-        {genres.map((genre) => (
+        {genres?.results.map((genre) => (
           <ListItem
             _hover={{ bg: "blackAlpha.500" }}
             key={genre.id}
