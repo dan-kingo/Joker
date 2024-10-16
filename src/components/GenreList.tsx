@@ -13,9 +13,9 @@ import GenreSkeleton from "./GenreListSkeleton";
 
 interface Props {
   onSelect: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
-const GenreList = ({ selectedGenre, onSelect }: Props) => {
+const GenreList = ({ selectedGenreId, onSelect }: Props) => {
   const { data: genres, error, isLoading } = useGenres();
 
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -34,7 +34,7 @@ const GenreList = ({ selectedGenre, onSelect }: Props) => {
             _hover={{ bg: "blackAlpha.500" }}
             key={genre.id}
             paddingY="4px"
-            bg={genre.id === selectedGenre?.id ? "blackAlpha.800" : ""}
+            bg={genre.id === selectedGenreId ? "blackAlpha.800" : ""}
             borderRadius={8}
           >
             <HStack>

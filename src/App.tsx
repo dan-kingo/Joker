@@ -1,29 +1,27 @@
 import {
+  Box,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerOverlay,
+  Flex,
   Grid,
   GridItem,
   Show,
-  Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  DrawerBody,
   useDisclosure,
-  Flex,
-  Box,
 } from "@chakra-ui/react";
-import NavBar from "./components/NavBar";
+import { useState } from "react";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
-import { useState } from "react";
-import { Genre } from "./hooks/useGenres";
-import PlatformSelector from "./components/PlatformSelector";
-import { Platform } from "./hooks/usePlatforms";
-import SortOrder from "./components/SortOrder";
 import HeadingText from "./components/HeadingText";
+import NavBar from "./components/NavBar";
+import PlatformSelector from "./components/PlatformSelector";
+import SortOrder from "./components/SortOrder";
 
 export interface GameQuery {
-  genre: Genre | null;
-  platform: Platform | null;
+  genreId?: number;
+  platformId?: number;
   sortOrder: string;
   searchText: string;
 }
@@ -63,8 +61,10 @@ const App = () => {
         <Show above="lg">
           <GridItem paddingX={4} area="side" paddingTop="90px">
             <GenreList
-              selectedGenre={gameQuery.genre}
-              onSelect={(genre) => setGameQuery({ ...gameQuery, genre })}
+              selectedGenreId={gameQuery.genreId}
+              onSelect={(genre) =>
+                setGameQuery({ ...gameQuery, genreId: genre.id })
+              }
             />
           </GridItem>
         </Show>
@@ -80,9 +80,9 @@ const App = () => {
               gap={3}
             >
               <PlatformSelector
-                selectedPlatform={gameQuery.platform}
+                selectedPlatformId={gameQuery.platformId}
                 onSelect={(platform) =>
-                  setGameQuery({ ...gameQuery, platform })
+                  setGameQuery({ ...gameQuery, platformId: platform.id })
                 }
               />
               <SortOrder
@@ -103,8 +103,10 @@ const App = () => {
           <DrawerCloseButton />
           <DrawerBody>
             <GenreList
-              selectedGenre={gameQuery.genre}
-              onSelect={(genre) => setGameQuery({ ...gameQuery, genre })}
+              selectedGenreId={gameQuery.genreId}
+              onSelect={(genre) =>
+                setGameQuery({ ...gameQuery, genreId: genre.id })
+              }
             />
           </DrawerBody>
         </DrawerContent>
