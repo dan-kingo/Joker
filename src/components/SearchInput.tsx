@@ -12,12 +12,10 @@ import {
 import { useRef } from "react";
 import { BsSearch } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
+import useGameQueryStore from "../store";
 
-interface Props {
-  onSubmit: (searchText: string) => void;
-}
-
-const SearchInput = ({ onSubmit }: Props) => {
+const SearchInput = () => {
+  const setSearchText = useGameQueryStore((s) => s.setSearchText);
   const ref = useRef<HTMLInputElement>(null);
 
   return (
@@ -33,7 +31,7 @@ const SearchInput = ({ onSubmit }: Props) => {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              if (ref.current) onSubmit(ref.current.value);
+              if (ref.current) setSearchText(ref.current.value);
             }}
           >
             <InputGroup bg="whiteAlpha.50">
@@ -47,7 +45,7 @@ const SearchInput = ({ onSubmit }: Props) => {
                   if (e.key === "Enter") {
                     e.preventDefault();
                     if (ref.current) {
-                      onSubmit(ref.current.value);
+                      setSearchText(ref.current.value);
                       ref.current.value = "";
                     }
                   }

@@ -2,18 +2,17 @@ import { HStack, Image, Button } from "@chakra-ui/react";
 import logo from "../assets/joker-high-resolution-logo-white-transparent.png";
 import ToogleColorMode from "./ToogleColorMode";
 import { FaBars } from "react-icons/fa";
-import SearchInput from "../services/SearchInput";
+import SearchInput from "./SearchInput";
 
 interface Props {
   onOpen: () => void;
-  onSubmit: (searchText: string) => void;
 }
-const NavBar = ({ onOpen, onSubmit }: Props) => {
+const NavBar = ({ onOpen }: Props) => {
   return (
     <HStack padding={4} justifyContent="space-between">
       <Image src={logo} width="90px" />
       <HStack>
-        <SearchInput onSubmit={onSubmit} />
+        <SearchInput />
         <ToogleColorMode />
         <Button
           aria-label="Open Menu"
