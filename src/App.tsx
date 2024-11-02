@@ -31,7 +31,7 @@ const App = () => {
         }}
         templateColumns={{
           base: "1fr",
-          lg: "200px 1fr",
+          lg: "250px 1fr",
         }}
         gap={2}
       >
@@ -46,12 +46,19 @@ const App = () => {
           <NavBar onOpen={onOpen} />
         </GridItem>
         <Show above="lg">
-          <GridItem paddingX={4} area="side" paddingTop="90px">
+          <GridItem
+            paddingX={4}
+            area="side"
+            position="fixed"
+            top="90px"
+            overflowY="auto"
+            height="100vh"
+          >
             <GenreList />
           </GridItem>
         </Show>
 
-        <GridItem area="main" paddingTop="90px">
+        <GridItem area="main" paddingTop="90px" paddingLeft={8}>
           <Box paddingX={4}>
             <HeadingText />
             <Flex
