@@ -53,6 +53,7 @@ const App = () => {
             top="90px"
             overflowY="auto"
             height="100vh"
+            className="custom-scroll"
           >
             <GenreList />
           </GridItem>
