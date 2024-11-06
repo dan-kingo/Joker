@@ -8,18 +8,17 @@ import {
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import useGameQueryStore from "../store";
-
+export const sortOrders = [
+  { value: "", label: "Relevence" },
+  { value: "-added", label: "Date Added" },
+  { value: "name", label: "Name" },
+  { value: "-released", label: "Date Released" },
+  { value: "-metacritic", label: "Popularity" },
+  { value: "-rating", label: "Average rating" },
+];
 const SortOrder = () => {
   const sortOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
   const setSortOrder = useGameQueryStore((s) => s.setSortOrder);
-  const sortOrders = [
-    { value: "", label: "Relevence" },
-    { value: "-added", label: "Date Added" },
-    { value: "name", label: "Name" },
-    { value: "-released", label: "Date Released" },
-    { value: "-metacritic", label: "Popularity" },
-    { value: "-rating", label: "Average rating" },
-  ];
 
   const currentSortOrder = sortOrders.find(
     (order) => order.value === sortOrder

@@ -18,6 +18,7 @@ import NavBar from "./components/NavBar";
 import PlatformSelector from "./components/PlatformSelector";
 import SortOrder from "./components/SortOrder";
 import PlatformList from "./components/PlatformList";
+import OrderList from "./components/OrderList";
 
 const App = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -57,6 +58,7 @@ const App = () => {
             className="custom-scroll"
           >
             <GenreList />
+            <OrderList />
             <PlatformList />
           </GridItem>
         </Show>
