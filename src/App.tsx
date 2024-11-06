@@ -63,7 +63,14 @@ const App = () => {
           </GridItem>
         </Show>
 
-        <GridItem area="main" paddingTop="90px" paddingLeft={8}>
+        <GridItem
+          area="main"
+          paddingTop="90px"
+          paddingLeft={{
+            base: 0,
+            lg: 8,
+          }}
+        >
           <Box paddingX={4}>
             <HeadingText />
             <Flex
@@ -87,6 +94,8 @@ const App = () => {
           <DrawerCloseButton />
           <DrawerBody>
             <GenreList />
+            <OrderList />
+            <PlatformList />
           </DrawerBody>
         </DrawerContent>
       </Drawer>
