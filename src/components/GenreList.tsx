@@ -57,6 +57,7 @@ const GenreList = () => {
           </ListItem>
         ))}
       </List>
+      <hr />
     </Box>
   );
 };

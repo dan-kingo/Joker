@@ -18,3 +18,9 @@ form {
     background: #555;
   }
 }
+
+hr {
+  border: 2px solid;
+  margin-top: 12px;
+  color: #555;
+}

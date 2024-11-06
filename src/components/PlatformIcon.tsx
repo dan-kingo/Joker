@@ -15,19 +15,18 @@ import { Platform } from "../hooks/usePlatforms";
 interface Props {
   platforms: Platform[];
 }
-
+export const iconMap: { [key: string]: IconType } = {
+  pc: FaWindows,
+  playstation: FaPlaystation,
+  xbox: FaXbox,
+  nintendo: SiNintendo,
+  ios: MdPhoneIphone,
+  android: FaAndroid,
+  linux: FaLinux,
+  web: BsGlobe,
+  mac: FaApple,
+};
 const PlatformIcon = ({ platforms }: Props) => {
-  const iconMap: { [key: string]: IconType } = {
-    pc: FaWindows,
-    playstation: FaPlaystation,
-    xbox: FaXbox,
-    nintendo: SiNintendo,
-    ios: MdPhoneIphone,
-    android: FaAndroid,
-    linux: FaLinux,
-    web: BsGlobe,
-    mac: FaApple,
-  };
   return (
     <HStack marginY={2}>
       {platforms.map((platform) => (
