@@ -6,6 +6,8 @@
 
 - **Discover Popular Games**: Explore a vast number of games.
 - **Search for Games**: Search for any video game using genres.
+- **Search for Games**: Search for any video game using titles platforms and more.
+- **Infinite Scroll**: Optimize user experience by adding infinite scroll.
 - **Responsive Design**: Optimized for all screen sizes with Chakra UI's responsive components.
 - **Dark/Light Mode**: Switch between dark and light modes for a personalized browsing experience.
   
@@ -67,9 +69,7 @@ This will run the app in development mode. Open http://localhost:5173 to view it
 
 ## Future Improvements
 
-- **Search for Games**: Search for any video game using titles platforms and more.
 - **Detailed Game Information**: View detailed game descriptions, release dates, genres, ratings, and more.
-- **Infinite Scroll**: Optimize user experience by adding infinite scroll.
 
 ## Acknowledgements
 
