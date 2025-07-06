@@ -2,6 +2,21 @@
 
 **Joker** is a video game discovery app that allows users to explore a vast collection of video games using data from the RAWG API. This application is built with **React**, **TypeScript**, and **Chakra UI** to provide a modern, responsive, and interactive user experience.
 
+## 🖼️ Project Screenshots
+
+### 🔐 Dashboard
+![Login Screenshot](https://res.cloudinary.com/dpm44ocft/image/upload/v1751784492/p6_hp7riu.png)
+
+---
+
+### 🏠 Game Filter
+![Dashboard Screenshot](https://res.cloudinary.com/dpm44ocft/image/upload/v1751784490/p4_ni005v.png)
+
+---
+
+### 👤 Loading Skeleton
+![Profile Screenshot](https://res.cloudinary.com/dpm44ocft/image/upload/v1751784487/p5_ygimzt.png)
+
 ## Features
 
 - **Discover Popular Games**: Explore a vast number of games.
